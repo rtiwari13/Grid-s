@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(204, 167, 72);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.animal{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap:1em;
+    grid-auto-flow: dense;
+}
+.animal .featured{
+    grid-row: span 2;
+    grid-column:span 2;
+}
+.animal > figure{
+    display:inline-block;
+    max-width: 300px;
+    margin: 0;
+}
+.animal img{
+flex: 1;
+object-fit: cover;
+max-width: 100%;
+}
+.animal figcaption{
+    padding: 0.3em 0.8em;
+    background-color: rgb(24, 61, 24);
+    color:#fff;
+    text-align:right;
+}
+.grid{
+    display:grid;
+    height:1200px;
+    grid-template-rows:repeat(4,200px);
+}
+@supports (display: grid) { 
+    .animal {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+    grid-auto-flow: dense;
+    }
+    .animal > figure {
+    display: flex;
+    flex-direction: column;
+    max-width: initial; 
+    }
+    .animal img {
+    flex: 1;
+    }
+    .animal .featured {
+    grid-row: span 2;
+    grid-column: span 2;
+    }
+}
